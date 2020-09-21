@@ -1,4 +1,4 @@
-# nuxt-repo
+# nux_todolist
 
 ## Build Setup
 
