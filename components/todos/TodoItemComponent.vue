@@ -1,28 +1,27 @@
 <template>
-	<tr>
-		<td class="align-middle" v-bind:class="{'is-completed':todo.completed}">{{ todo.title }}</td>
-		<td>
-			<button class="btn btn-success" v-on:click="changeComplete" v-bind:class="{'btn-warning':!todo.completed, 'btn-danger':todo.completed}" >
-				<i class="fa" v-bind:class="{'fa-check':!todo.completed, 'fa-window-close':todo.completed}" ></i>
-			</button>
-		</td>
-		<td>
-			<button @click="$emit('del-todo',todo.id)" class="btn btn-info">
+	<b-tr>
+		<b-td colspan="3" class="align-middle" :class="{'is-completed':todo.completed}">{{ todo.title }}</b-td>
+		<b-td>
+			<b-button @click="changeComplete" :class="{'btn-success':!todo.completed, 'btn-danger':todo.completed}" >
+				<i class="fa" :class="{'fa-check':!todo.completed, 'fa-window-close':todo.completed}" ></i>
+			</b-button>
+		</b-td>
+		<b-td>
+			<b-button variant="info" @click="$emit('del-todo',todo.id)">
 				<i class="fa fa-trash"></i>
-			</button>
-		</td>
-	</tr>
+			</b-button>
+		</b-td>
+	</b-tr>
 </template>
 
 <script>
 export default {
 	data() {
 		return {
-			id : todo.id
 		}
 	},
 	name: "TodoItem",
-	props:["todo","id"], 
+	props:["todo"], 
 	methods: {
 		changeComplete(){
 			this.todo.completed = !this.todo.completed;

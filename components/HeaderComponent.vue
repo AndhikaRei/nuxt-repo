@@ -1,12 +1,12 @@
 <template>
 	<header>
-		<nav class="justify-content-center navbar navbar-expand-sm navbar-dark bg-primary1">
+		<b-navbar toggleable="sm" type="dark" class="justify-content-center bg-primary1">
 			<a class="navbar-brand" href="#">Vue TodoList</a>
 			<div id="nav" class="align-middle">
 				<nuxt-link class="text-white" to="/about">About</nuxt-link>
 				<nuxt-link class="text-white" to="/">Home</nuxt-link>
 			</div>
-		</nav>  
+		</b-navbar> 
 	</header>   
 </template>
 

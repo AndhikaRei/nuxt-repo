@@ -1,31 +1,31 @@
 <template>
-	<div class="container mt-4">
-		<div class="row justify-content-center">
-			<div class="col-12 col-sm-10 col-md-8 col-lg-5">
-					<div class="card">
-						<h2 class="card-header text-center font-weight-bold">
-              This is All your To-do
-            </h2>
-						<div class="card-body text-center">
-							<div class="table-responsive">
-								<table class="table table-borderless">
-									<thead>
-										<tr>
-											<th>Your Todo</th>
-											<th>Completed</th>
-											<th>Action</th>
-										</tr>
-									</thead>
-									<tbody v-for="todo in todos" v-bind:key="todo.id">
-										<TodoItem v-bind:todo="todo" v-bind:id="todo.id" v-on:del-todo="$emit('del-todo',todo.id)"/>
-									</tbody>
-								</table>
-							</div>
+	<b-container class="mt-4">
+		<b-row class="justify-content-center">
+			<b-col sm="12" md="10" lg="5">
+				<b-card>
+					<template #header>
+						<h4 class="text-center font-weight-bold mb-0">This is All your To-do</h4>
+					</template>
+					<b-card-body class="text-center py-0 px-0">
+						<div class="table-responsive-sm ">
+							<table class="table table-borderless table-sm">
+								<thead>
+									<b-tr>
+										<b-th colspan="3">Your Todo</b-th>
+										<b-th>Stat</b-th>
+										<b-th>Opt</b-th>
+									</b-tr>
+								</thead>
+								<tbody v-for="todo in todos" :key="todo.id">
+									<TodoItem :todo="todo" :id="todo.id" @del-todo="$emit('del-todo',todo.id)"/>
+								</tbody>
+							</table>
 						</div>
-					</div>
-			</div>
-		</div>
-	</div>
+					</b-card-body>
+				</b-card>
+			</b-col>
+		</b-row>
+	</b-container>
 </template>
 
 <script>

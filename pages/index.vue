@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <Todo v-bind:todos="todos" v-on:del-todo="deleteTodo"/>
-    <AddTodo v-on:add-todo="addTodo"/>
+    <Todo :todos="todos" @del-todo="deleteTodo"/>
+    <AddTodo @add-todo="addTodo"/>
   </div>
 </template>
 

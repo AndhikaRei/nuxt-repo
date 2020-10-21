@@ -1,23 +1,25 @@
 <template>
-	<div class="container mb-5">
-		<div class="row mt-4 justify-content-center">
-			<div class="col-12 col-sm-10 col-md-8 col-lg-6">
-				<div class="card">
-					<h3 class="card-header text-center font-weight-bold">Do You Have New Todo?</h3>
-					<div class="card-body">
-						<form  @submit="addTodo" class="mt-4">
-							<div class="form-group">
-								<div class="form-row justify-content-center">
-									<input type="text" class="col-8 form-control" v-model="title" name="title" id="title">
-									<button class="btn btn-warning col-3 ml-2" type="submit"> <i class="fa fa-plus"></i> Add Todo</button>
-								</div>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>  
-		</div>
-	</div>
+	<b-container class="mb-5">
+		<b-row class="mt-4 justify-content-center">
+			<b-col sm="12" md="10" lg="6"> 
+				<b-card>
+					<template #header>
+						<h4 class="text-center font-weight-bold mb-0">Do You Have New Todo?</h4>
+					</template>
+					<b-card-body>
+						<b-form  @submit="addTodo" class="mt-2">
+							<b-form-group>
+								<b-form-row class="justify-content-center">
+									<b-form-input type="text" class="col-8" v-model="title" name="title" id="title"></b-form-input>
+									<b-button variant="warning" class="col-3 ml-2" type="submit"> <i class="fa fa-plus"></i> Add</b-button>
+								</b-form-row>
+							</b-form-group>
+						</b-form>
+					</b-card-body>
+				</b-card>
+			</b-col>
+		</b-row>
+	</b-container>
 </template>
 
 <script>
@@ -31,7 +33,6 @@ export default {
 	},
 	methods : {
 		addTodo(e){
-			console.log(5);
 			e.preventDefault();
 			const newTodo = {
 				// id : uuidv4(),
